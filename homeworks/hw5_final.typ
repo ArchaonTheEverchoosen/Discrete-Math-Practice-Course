@@ -138,7 +138,7 @@
 
 #v(0.5cm)
 
-#align(center, image("circuit.png", width: 100%))
+#align(center, image("pictures/circuit.png", width: 100%))
 
 #v(0.5cm)
 
@@ -233,7 +233,7 @@ _(необязательное, +1 доп. балл)_
 
 #text(fill: blue, [Бинарная диаграмма решений]) (BDD) - форма представления булевой функции $f(x_1, x_2, ..., x_n)$ от n переменных в виде направленного ациклического графа, состоящего из внутренних узлов решений $(x_i)$, каждый из которых имеет по два потомка, и двух терминальных узлов (0 и 1), каждый из которых соответствует одному из двух значений булевой функции.
 
-#align(center, [#image("BDD.png", width: 60%)])
+#align(center, [#image("pictures/BDD.png", width: 60%)])
 
 #v(0.5cm)
 
@@ -283,9 +283,9 @@ _Итог:_ BDD есть результат последовательного �
 
 #align(center,
   [
-    #image("happy-new-year.jpg", width: 60%)
+    #image("pictures/happy-new-year.jpg", width: 60%)
     #v(1em)
-    #image("2026.png", width: 50%)
+    #image("pictures/2026.png", width: 50%)
   ]
 )
 
