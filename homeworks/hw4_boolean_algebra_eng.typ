@@ -135,7 +135,7 @@ Construct a 5-variable _Karnaugh map_ for your function using the template below
   })
 ]
 
-#align(center, image("willem-dafoe.png", width: 50%))
+#align(center, image("pictures/willem-dafoe.png", width: 50%))
 
 #v(3cm)
 

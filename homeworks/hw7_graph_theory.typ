@@ -266,7 +266,7 @@
 Предложить простой граф гомеоморфный заданному.
 Сравнить наборы степеней графов, суммы степеней.
 
-#align(center, image("gomeo.png", width: 20%))
+#align(center, image("pictures/gomeo.png", width: 20%))
 
 #block(sticky: true)[*d) Характеристики*]
 
@@ -466,7 +466,7 @@ _(необязательное, +1 доп. балл)_
 
 Число Рамсея $R(r, s)$  — это минимальное $n$ , такое что при любой 2-раскраске ребер $K_n$ найдется либо красный $K_r$, либо синий $K_s$.
 
-#align(center, image("ramsey-theory.png", width: 20%))
+#align(center, image("pictures/ramsey-theory.png", width: 20%))
 
 Докажите, что $R(3, 3) = 6$, показав:
 

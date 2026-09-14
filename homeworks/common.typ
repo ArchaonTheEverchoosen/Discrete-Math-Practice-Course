@@ -1,27 +1,63 @@
 #import "requirements.typ": *
 
+// Fancy colors
+#let accent = blue.darken(25%)
+#let warn = rgb("#b45309")
+#let good = rgb("#15803d")
+
+
 #let template(dark: false, doc) = {
   // Dark mode
   set text(fill: white) if dark
   set page(fill: luma(12%)) if dark
 
+  set text(12pt, lang: "ru")
+  set par(justify: true)
+
+  show emph: set text(fill: accent)
+  show link: set text(fill: accent)
+
   // Fix emptyset symbol
   show sym.emptyset: set text(font: "Libertinus Sans")
-
-  // Setup theorems
-  show: ctheorems.thmrules.with(qed-symbol: $square$)
 
   // Show i.e. in italic:
   show "i.e.": set text(style: "italic")
   // Show e.g. in italic:
   show "e.g.": set text(style: "italic")
-  // Shot etc. in italic:
+   // Shot etc. in italic:
   show "etc.": set text(style: "italic")
 
   // Matrix setup
   set math.mat(column-gap: 1em)
 
+  // Task headings setup: fancy line, bold, accent color
+  show heading.where(level: 2): set text(
+    size: 14pt,
+    weight: "bold",
+    fill: accent,
+  )
+  show heading.where(level: 2): it => block(
+    width: 100%,
+    above: 1.6em,
+    below: 0.9em,
+    sticky: true,
+    inset: (bottom: 0.55em),
+    stroke: (bottom: 0.8pt + accent.lighten(40%)),
+    it,
+  )
+
   doc
+}
+
+// Task list helper
+#let tasklist(id, cols: 1, format: "1.", start:1, body) = {
+  let s = counter(id)
+  s.update(start)
+  set enum(numbering: _ => context {
+    s.step()
+    s.display(format)
+  })
+  columns(cols, gutter: 1em)[#body]
 }
 
 // Horizontal rule
@@ -60,6 +96,34 @@
     ..blob-style,
   ),
 )
+
+// Fancy tags to segregate tasks by their difficulty
+#let Tag(label, color) = {
+  set text(size: 0.8em)
+  box(
+    label,
+    radius: 5pt,
+    inset: (x: 0.4em),
+    outset: (y: 0.4em),
+    stroke: 0.6pt + color.darken(20%),
+    fill: color.lighten(80%),
+  )
+}
+#let TagCore = Tag("Core", green)
+#let TagEssential = Tag("Essential", blue)
+#let TagChallenge = Tag("Challenge", purple)
+#let TagBonus = Tag("Bonus", yellow)
+
+// Block for organizing content (grey box)
+#let Block(body, ..args) = {
+  block(
+    body,
+    inset: (x: 1em),
+    stroke: (left: 3pt + gray),
+    outset: (y: 3pt, left: -3pt),
+    ..args,
+  )
+}
 
 // Link with icon
 #let href(..args) = link(..args, super(fontawesome.fa-external-link()))

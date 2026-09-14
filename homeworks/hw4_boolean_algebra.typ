@@ -133,7 +133,7 @@
   })
 ]
 
-#align(center, image("willem-dafoe.png", width: 50%))
+#align(center, image("pictures/willem-dafoe.png", width: 50%))
 
 #v(2cm)
 
