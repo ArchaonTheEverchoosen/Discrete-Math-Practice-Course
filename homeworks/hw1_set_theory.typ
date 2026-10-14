@@ -119,7 +119,7 @@
 + *Немного доказательств.* Докажите тождества, используя законы:
   #tasklist("prob2d", cols: 1, format: "(a)")[
   + $A inter (B union overline(A)) = A inter B$
-  + $A union (B\\C) = (A inter B)\\(A inter C)$
+  + $A inter (B\\C) = (A inter B)\\(A inter C)$
   ]
 ]
 
@@ -247,7 +247,7 @@ $ cal(J) (A, B) = (card(A inter B))/ (card(A union B))  $
   
 + Придумайте как представить 4 множества используя диаграммы Эйлера-Венна. С помощью вашего варианта диаграммы задайте:
 #let nA = $overline(A)$
-#let nB = $overline(D)$
+#let nB = $overline(B)$
 #let nC = $overline(C)$
 #let nD = $overline(D)$
   #tasklist("prob5b", format: "(a)", start: 7)[
